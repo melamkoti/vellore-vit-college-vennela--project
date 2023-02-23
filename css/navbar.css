@@ -1,0 +1,107 @@
+
+/* navbar styles */
+.nav-container{
+    background: var(--clr-black-90);
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -70px;
+}
+.nav-container.sticky-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    transition: var(--transition);
+}
+.nav-center{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+}
+.nav-links-main{
+    display: none;
+}
+.nav-social-links-main{
+    display: none;
+}
+.nav-container .logo-section{
+    width: 30px;
+}
+ .nav-container .hamburger{
+    width: 30px;
+    display: flex;
+    justify-self: flex-end;
+}
+
+@media screen and (min-width:992px) {
+    .nav-container{
+        min-height: 70px;
+    }
+    .nav-container .hamburger{
+        display: none;
+    }
+    .nav-container .logo-section{
+        width: 50px;
+        cursor: pointer;
+    }
+    .nav-container .nav-links-main{
+        display: flex;
+    }
+    .nav-container .nav-social-links-main{
+        display: flex;
+    }
+    .nav-center{
+        width: 80%;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .nav-links-main .nav-links{
+        display: flex;
+        column-gap: 30px;
+    }
+    .nav-container .nav-link{
+        color: var(--clr-white);
+        font-size: 16px;
+        text-transform: capitalize;
+        font-weight: bold;
+        letter-spacing: 1px;
+        padding: 5px 10px;
+        border-radius: var(--radius);
+        transition: var(--transition);
+    }
+    .nav-container .nav-link.active,
+    .nav-container .nav-link:hover{
+         background: var(--clr-white-light);
+         color: var(--clr-black);    
+    }
+    .nav-container .nav-social-links-main{
+        display: flex;
+        justify-self: flex-end;
+    }
+    .nav-social-links-main .nav-social-links{
+        display: flex;
+        column-gap: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav-container .nav-social-link{
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--clr-white);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav-container .nav-social-link img {
+        width: 18px;
+    }
+    .nav-social-links-main .nav-social-link:hover{
+        transition: var(--transition);
+        transform: translateY(-3px);
+    }
+}
